@@ -1,8 +1,8 @@
-#1st Pet project with React Native...
+# 1st Pet project with React Native...
 
 for learning and testing React Native with the Marvel public api
 
-#Example screens
+# Example screens
 
 Home Screen with a list of comics
 
