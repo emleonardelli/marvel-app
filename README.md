@@ -6,4 +6,4 @@ for learning and testing React Native with the Marvel public api
 
 Home Screen with a list of comics
 
-![Example Home](/assets/app.img1.jpg | width=100)
+<img src="https://github.com/emleonardelli/marvel-app/tree/main/assets/app.img1.jpg" width="100">
