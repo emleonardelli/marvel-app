@@ -14,14 +14,12 @@ export default Grid
 
 
 const PreviewLayout = ({ children }) => (
-    <View style={{padding: 10, flex: 1}}>
-      <View style={styles.row}>{children}</View>
-    </View>
+  <View style={styles.row}>{children}</View>
 );
   
 const styles = StyleSheet.create({
     box: {
-        width: 150,
+        width: 110,
         height: 150,
     },
     row: {
