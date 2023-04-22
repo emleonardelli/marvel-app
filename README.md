@@ -10,4 +10,4 @@ Home Screen with a list of comics
 
 Improvement in home interface with horizontal scrolls
 
-<img src="assets/app.img3.jpg" width="200">
+<img src="assets/app.img3.jpg" width="300">
