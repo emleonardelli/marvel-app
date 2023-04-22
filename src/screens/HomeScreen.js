@@ -15,8 +15,6 @@ const HomeScreen = () => {
             <ScrollView refreshControl={
                 <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
             }>
-                
-                <ActivityIndicator size="large" />
                 <ComicsComponent />
                 <CharactersComponent />
                 <ComicsComponent />
