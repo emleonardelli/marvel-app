@@ -1,15 +1,15 @@
 import { Text, ScrollView, Pressable, StyleSheet, Image, TextInput, RefreshControl, SafeAreaView, View } from 'react-native'
 import { getResource } from '../services/marvelApi';
-import Grid from '../components/shared/Grid';
+import Grid from './shared/Grid';
 import React, { useEffect, useState }  from 'react'
 import { Button } from 'react-native';
-import ComicItem from './shared/ComicItem';
+import CharacterItem from './shared/CharacterItem';
 import List from './shared/List';
 
-const ComicsComponent = () => {
+const CharactersComponent = () => {
   const [comics, setComics] = useState([]);
   const getComics = async () => {
-    const res = await getResource();
+    const res = await getResource('characters');
     setComics(res);
   }
   useEffect(() => {
@@ -26,10 +26,10 @@ const ComicsComponent = () => {
       <SafeAreaView>
         {comics.length > 0 && (
           <View style={{paddingHorizontal: 5}}>
-            <Text style={styles.title}>Comics</Text>
+            <Text style={styles.title}>Personajes</Text>
             <List dataset={comics}>
               {(comic, newStyle) => (
-                <ComicItem
+                <CharacterItem
                   key={comic.id}
                   comic={comic}
                   newStyle={newStyle}
@@ -43,7 +43,7 @@ const ComicsComponent = () => {
   )
 }
 
-export default ComicsComponent
+export default CharactersComponent
 
 const styles = StyleSheet.create({
   button: {

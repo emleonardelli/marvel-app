@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 export function NativeStackNavigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Marvel App" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
