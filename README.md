@@ -6,4 +6,8 @@ for learning and testing React Native with the Marvel public api
 
 Home Screen with a list of comics
 
-<img src="assets/app.img1.jpg" width="200"><img src="assets/app.img3.jpg" width="200">
+<img src="assets/app.img1.jpg" width="300">
+
+Improvement in home interface with horizontal scrolls
+
+<img src="assets/app.img3.jpg" width="200">
