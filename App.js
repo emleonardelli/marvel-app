@@ -18,18 +18,18 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
-    image: {
-        flex: 1,
-        justifyContent: 'center',
-    },
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 });
 
 const navTheme = {
   ...DefaultTheme,
   colors: {
-    background: 'transparent',
+    backgroundColor: 'black',
   },
 };

@@ -2,17 +2,24 @@ import { Pressable, Text, StyleSheet, Image, Dimensions } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 
-const ComicItem = ({ comic, newStyle }) => {
+const Item = (props) => {
+  const {
+    itemId,
+    imageUrl,
+    title,
+    entity,
+  } = props;
+
   return (
     <Pressable
-      key={`comic_${comic.id}`}
-      style={[styles.button, newStyle]}
+      key={`${entity}_${itemId}`}
+      style={styles.button}
       onPress={() => {}}
     >
       <Image
         style={styles.comicImg}
         source={{
-        uri: `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+          uri: imageUrl
         }}
       />
       <LinearGradient
@@ -21,14 +28,14 @@ const ComicItem = ({ comic, newStyle }) => {
           style={styles.linearGradient}
       >
         <Text style={styles.text}>
-            {comic.title}
+          {title}
         </Text>
       </LinearGradient>
     </Pressable>
   )
 }
 
-export default ComicItem
+export default Item
 
 
 const styles = StyleSheet.create({
