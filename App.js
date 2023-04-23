@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { NativeStackNavigation, DefaultTheme } from './src/navigation/NativeStackNavigation';
+import { DefaultTheme } from './src/navigation/NativeStackNavigation';
 import { ImageBackground, StyleSheet } from 'react-native';
+import { NativeTabNavigation } from './src/navigation/NativeTabNavigation';
 const image = require('./assets/background-app.png');
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
       style={styles.image}
     >
       <NavigationContainer theme={navTheme}>
-        <NativeStackNavigation />
+        <NativeTabNavigation />
       </NavigationContainer>
     </ImageBackground>
   );
@@ -18,9 +19,6 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   image: {
     flex: 1,
     justifyContent: 'center',

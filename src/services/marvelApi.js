@@ -20,3 +20,12 @@ export const getResource = async (resource = 'comics') => {
     res = await res.json();
     return res.data.results;
 }
+
+export const getEntityResource = async (resource, id) => {
+    const ts = 1;
+    const hash = md5(`${ts}${AUTH.PRIVATE}${AUTH.KEY}`);
+    const URL = `${AUTH.URL}${resource}/${id}?&limit=${SERVICES.amount}&ts=${ts}&apikey=${AUTH.KEY}&hash=${hash}`
+    let res = await fetch(URL);
+    res = await res.json();
+    return res.data.results[0];
+}

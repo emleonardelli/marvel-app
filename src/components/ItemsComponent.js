@@ -8,21 +8,22 @@ import { getResource } from '../services/marvelApi';
 import React, { useEffect, useState }  from 'react'
 import Item from './shared/Item';
 import List from './shared/List';
+import { useNavigation } from '@react-navigation/native';
 
 const ItemsComponent = (props) => {
   const {
     entity,
-    itemName,
-    title,
     setLoaded
-  } = props;
+  } = props; 
+  const title = entity.name;
+  const navigation = useNavigation();
   const [items, setComics] = useState([]);
   const getComics = async () => {
-    const res = await getResource(entity);
+    const res = await getResource(entity.entity);
     setComics(res);
     setLoaded((loaded) => ({
       ...loaded,
-      [entity]:true
+      [entity.entity]:true
     }))
   }
   useEffect(() => {
@@ -37,10 +38,14 @@ const ItemsComponent = (props) => {
             {(comic) => (
               <Item
                 key={comic.id}
-                entity='comic'
+                entity={entity}
                 itemId={comic.id}
-                title={comic[itemName]}
+                title={comic[entity.title]}
                 imageUrl={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                onPress={() => navigation.navigate('Description', {
+                  id: comic.id,
+                  entity
+                })}
               />
             )}
           </List>

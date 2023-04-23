@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ItemsComponent from '../components/ItemsComponent';
 import { Dimensions, RefreshControl, SafeAreaView, ScrollView } from 'react-native';
 import {ActivityIndicator, View} from 'react-native';
+import { characters, comics, creators, events, series } from '../types/entity';
 
 const HomeScreen = () => {
     const [refreshing, setRefreshing] = useState(false);
@@ -35,40 +36,28 @@ const HomeScreen = () => {
                         size={50}
                     />
                 )}
-                {/*
                 <View style={{opacity: loading ? 0 : 1}}>
                     <ItemsComponent
-                        itemName='title'
-                        entity='comics'
-                        title='Comics'
+                        entity={comics}
                         setLoaded={setLoaded}
                     />
                     <ItemsComponent
-                        itemName='name'
-                        entity='characters'
-                        title='Personajes'
+                        entity={characters}
                         setLoaded={setLoaded}
                     />
                     <ItemsComponent
-                        itemName='title'
-                        entity='series'
-                        title='Series'
+                        entity={series}
                         setLoaded={setLoaded}
                     />
                     <ItemsComponent
-                        itemName='title'
-                        entity='events'
-                        title='Eventos'
+                        entity={events}
                         setLoaded={setLoaded}
                     />
                     <ItemsComponent
-                        itemName='fullName'
-                        entity='creators'
-                        title='Creadores'
+                        entity={creators}
                         setLoaded={setLoaded}
                     />
                 </View>
-                */}
             </ScrollView>
         </SafeAreaView>
     )

@@ -1,45 +1,24 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SearchScreen from '../screens/SearchScreen';
+import DescriptionScreen from '../screens/DescriptionScreen';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export function NativeStackNavigation() {
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarStyle: {
-          paddingTop: 5,
-          height: 60,
-          backgroundColor: '#FF69B4',
-        },
-        tabBarLabelStyle: {
-          fontSize: 15,
-          marginBottom: 5,
-        },
-      })}
-    >
-    <Tab.Screen
-      name="Hace tu busqueda"
-      component={SearchScreen}
-      options={{
-        tabBarLabel: 'Buscar',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="magnify" color={color} size={size}/>
-        ),
-      }}
-    />
-      <Tab.Screen
-        name="Marvel App"
+    <Stack.Navigator>
+      <Stack.Screen
+        name="List"
         component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Description"
+        component={DescriptionScreen}
         options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size}/>
-          ),
+          title: 'Descripcion'
         }}
       />
-    </Tab.Navigator>
+    </Stack.Navigator>
   );
 }
