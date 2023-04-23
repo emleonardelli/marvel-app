@@ -3,6 +3,7 @@ import {
   StyleSheet,
   SafeAreaView,
   View,
+  Pressable,
 } from 'react-native'
 import { getResource } from '../services/marvelApi';
 import React, { useEffect, useState }  from 'react'
@@ -33,7 +34,15 @@ const ItemsComponent = (props) => {
     items.length > 0 &&(
       <SafeAreaView>
         <View style={{paddingHorizontal: 5}}>
-          <Text style={styles.title}>{title}</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={styles.title}>{title}</Text>
+            <Pressable
+              style={styles.buttonMore}
+              onPress={() => navigation.navigate('VerMas', {entity})}
+            >
+              <Text style={styles.buttonTitle}>Ver mas</Text>
+            </Pressable>
+          </View>
           <List dataset={items}>
             {(comic) => (
               <Item
@@ -81,6 +90,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   title: {
+    width: 270,
     marginTop: 5,
     marginHorizontal: 10,
     padding: 10,
@@ -89,5 +99,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.3)',
     color: 'white',
     borderRadius: 40,
-  }
+  },
+  buttonTitle: {
+    fontSize: 20,
+    color: 'black',
+  },
+  buttonMore: {
+    width: 120,
+    marginTop: 5,
+    marginRight: 10,
+    padding: 10,
+    paddingLeft: 25,
+    backgroundColor: 'rgba(255,255,255,0.5)',
+    borderRadius: 40,
+  },
 });

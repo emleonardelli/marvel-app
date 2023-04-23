@@ -22,7 +22,7 @@ const DescriptionScreen = (props) => {
       getEntity();
     }, [])
     const onRefresh = React.useCallback(() => {
-        //setFindedComics(comics);
+      //setFindedComics(comics);
     }, []);
     return (
         <SafeAreaView style={{

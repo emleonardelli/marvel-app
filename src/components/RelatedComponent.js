@@ -1,13 +1,9 @@
 import {
   Text,
   StyleSheet,
-  SafeAreaView,
   View,
-  Alert,
 } from 'react-native'
-import { getResource } from '../services/marvelApi';
-import React, { useEffect, useState }  from 'react'
-import Item from './shared/Item';
+import React  from 'react'
 import List from './shared/List';
 import { useNavigation } from '@react-navigation/native';
 import RealtedItem from './shared/RelatedItem';
