@@ -22,7 +22,7 @@ export function NativeTabNavigation() {
       })}
     >
       <Tab.Screen
-        name="Marvel App"
+        name="App 1"
         component={NativeStackNavigation}
         options={{
           tabBarLabel: 'Inicio',

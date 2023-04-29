@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "marvel-app",
-    "slug": "marvel-app",
-    "version": "1.0.0",
+    "name": "Ezequiel Mella - App 1",
+    "slug": "emleonardelli-app-1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#000"
     },
@@ -25,6 +25,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "acb04e2f-bd52-4f76-9dbf-6e4009eaa337"
+      }
     }
   }
 }
